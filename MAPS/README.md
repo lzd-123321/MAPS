@@ -30,40 +30,6 @@ python main.py
 
 这将处理 `assets/meshes/stanford-bunny.obj` 中的兔子网格，并将简化版本保存到 `assets/out/`。
 
-### 使用API
-
-```python
-from maps_algorithm import MAPS
-
-# 加载网格（顶点和三角形作为numpy数组）
-maps = MAPS(vertices, triangles)
-
-# 执行一次简化迭代
-success = maps.level_down()
-
-# 获取当前网格
-vertices, triangles = maps.get_current_mesh()
-
-# 获取统计信息
-stats = maps.get_statistics()
-print(f"顶点数: {stats['num_vertices']}")
-print(f"三角形数: {stats['num_triangles']}")
-```
-
-### 使用方法
-
-直接运行主程序：
-
-```bash
-python main.py
-```
-
-或使用网格生成器创建测试网格：
-
-```bash
-python mesh_generator.py
-```
-
 ## 算法原理
 
 MAPS算法的工作流程如下：
